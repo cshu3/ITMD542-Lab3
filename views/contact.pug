@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+  div#contact-details
+      dl
+        dt First Name:
+        dd= contact.firstName
+        dt Last Name:
+        dd= contact.lastName
+        dt Email Address:
+        dd= contact.email
+        dt Notes:
+        dd= contact.notes
+        dt Date Created:
+        dd= contact.created_date
+        dt Date Modified:
+        dd= contact.updated_date
+  div.contact-actions 
+    a(href=`/contacts/${contact.id}/delete`) Delete Contact
+    | 
+    a(href=`/contacts/${contact.id}/edit`) Edit Contact
