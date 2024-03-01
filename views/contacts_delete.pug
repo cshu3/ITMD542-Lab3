@@ -2,9 +2,21 @@ extends layout
 
 block content
   h1= title
-  p Are you sure you want to delete the following Contact?
+  p Are you sure you want to delete the following Contact?  
+  hr
+  section#contact-details
+    div.contact-info
+      dl
+        dt First Name:
+        dd= contact.firstName
+        dt Last Name:
+        dd= contact.lastName
+        dt Email Address:
+        dd= contact.email
+        dt Notes:
+        dd= contact.notes
   hr
   form(method='POST' action=`/contacts/${contact.id}/delete`)
-    button(type='submit') Confirm Delete
-    | 
-    a(href=`/contacts/${contact.id}`) Cancel
+    button.button(type='submit') Confirm Delete
+    a.button-like(href=`/contacts/${contact.id}`) Cancel
+

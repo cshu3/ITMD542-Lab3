@@ -2,7 +2,8 @@ extends layout
 
 block content
   h1= title
-  div#contact-details
+  section#contact-details
+    div.contact-info
       dl
         dt First Name:
         dd= contact.firstName
@@ -16,7 +17,6 @@ block content
         dd= contact.created_date
         dt Date Modified:
         dd= contact.updated_date
-  div.contact-actions 
-    a(href=`/contacts/${contact.id}/delete`) Delete Contact
-    | 
-    a(href=`/contacts/${contact.id}/edit`) Edit Contact
+    div.contact-actions 
+      a.button(href=`/contacts/${contact.id}/delete`) Delete Contact
+      a.button(href=`/contacts/${contact.id}/edit`) Edit Contact

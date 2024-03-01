@@ -1,25 +1,28 @@
+
 extends layout
 
 block content
-  h1= title
-  p Use the form below to add a contact.
-  hr
-  if msg 
-    p(class='redtext')= msg
-  form(method='POST' action='/contacts/add')
-    .form-group
-      label(for='firstName') First Name
-      input#firstName.form-control(type='text', name='firstName', required='true', value=(contact ? contact.firstName : ''))
-    .form-group
-      label(for='lastName') Last Name
-      input#lastName.form-control(type='text', name='lastName', required='true', value=(contact ? contact.lastName : ''))
-    .form-group
-      label(for='email') Email
-      input#email.form-control(type='email', name='email', value=(contact ? contact.email : ''))
-    .form-group
-      label(for='notes') Notes
-      input#notes.form-control(type='text',name='notes', value=(contact ? contact.notes : ''))
-    | 
-    button(type='submit') Create A Contact 
-    | 
-    a(href='/contacts') Cancel
+  container#contacts_add-container
+    h1= title
+    p Use the form below to add a contact.
+    hr
+    if msg 
+      p(class='redtext')= msg
+    form(method='POST' action='/contacts/add')
+      fieldset
+        legend Contact Information
+        .form-group
+          label(for='firstName') First Name
+          input#firstName.form-control(type='text', name='firstName', required='true', placeholder='Enter first name', value=(contact ? contact.firstName : ''))
+        .form-group
+          label(for='lastName') Last Name
+          input#lastName.form-control(type='text', name='lastName', required='true', placeholder='Enter last name', value=(contact ? contact.lastName : ''))
+        .form-group
+          label(for='email') Email
+          input#email.form-control(type='email', name='email', placeholder='Enter email address', value=(contact ? contact.email : ''))
+        .form-group
+          label(for='notes') Notes
+          input#notes.form-control(type='text', name='notes', placeholder='Additional notes', value=(contact ? contact.notes : ''))
+        .form-actions
+          button.button(type='submit') Create A Contact
+          a.button-like(href='/contacts') Cancel

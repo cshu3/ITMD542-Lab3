@@ -6,7 +6,7 @@ const Contact = require('../src/Contact');
 exports.contacts_list = async function(req, res, next) {
   const data = await contactsRepo.findAll();
   console.log(data);
-  res.render('contacts', { title: 'Express Contacts', contacts: data });
+  res.render('contacts', { title: 'IIT Contacts List', contacts: data });
 };
 
 /* GET create contact form. */

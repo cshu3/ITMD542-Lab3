@@ -1,12 +1,162 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 a {
   color: #00B7FF;
+  text-decoration: none;
 }
 
-.redtext {
-  color: #cc0000;
+a.button-like {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 5px 0;
+  border: 1px solid #00B7FF;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  transition: background-color 0.3s;
 }
+
+a.button-like:hover {
+  background-color: #e8e8e8;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: #00B7FF;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #0099CC;
+}
+
+#contacts-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#contacts-table thead th {
+  background-color: #f8f8f8;
+  border-bottom: 2px solid #e7e7e7;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#contacts-table tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+#contacts-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#contact-details {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contact-info {
+  margin-bottom: 20px;
+}
+
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+.contact-actions {
+  text-align: right;
+}
+
+/* Specific styles for Add a Contact form */
+#contacts_add-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#contacts_add-container h1 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#contacts_add-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contacts_add-container label {
+  margin-bottom: 5px;
+}
+
+#contacts_add-container input[type=text],
+#contacts_add-container input[type=email],
+#contacts_add-container textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#contacts_add-container input[type=submit],
+#contacts_add-container .cancel-button {
+  padding: 10px 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#contacts_add-container input[type=submit] {
+  background-color: #5cb85c;
+  color: white;
+}
+
+#contacts_add-container .cancel-button {
+  background-color: #f0ad4e;
+  color: white;
+  margin-left: 5px;
+}
+
+#contacts_add-container input[type=submit]:hover {
+  background-color: #449d44;
+}
+
+#contacts_add-container .cancel-button:hover {
+  background-color: #ec971f;
+}
+@media (max-width: 768px) {
+  /* Responsive table styles or other adjustments */
+}
+
+

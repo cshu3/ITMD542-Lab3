@@ -1,25 +1,27 @@
 extends layout
 
 block content
-  h1= title
-  p Use the form below to edit this contact.
-  hr
-  if msg 
-    p(class='redtext')= msg
-  form(method='POST' action=`/contacts/${contact.id}/edit`)
-    .form-group
-      label(for='firstName') First Name
-      input#firstName.form-control(type='text', name='firstName', required='true', value=(contact ? contact.firstName : ''))
-    .form-group
-      label(for='lastName') Last Name
-      input#lastName.form-control(type='text', name='lastName', required='true', value=(contact ? contact.lastName : ''))
-    .form-group
-      label(for='email') Email
-      input#email.form-control(type='email', name='email', value=(contact ? contact.email : ''))
-    .form-group
-      label(for='notes') Notes
-      input#notes.form-control(type='text',name='notes', value=(contact ? contact.notes : ''))
-    | 
-    button(type='submit') Save Changes
-    | 
-    a(href='/contacts') Cancel
+  container#contacts_add-container
+    h1= title
+    p Use the form below to edit this contact.
+    hr
+    if msg 
+      p(class='redtext')= msg
+    form(method='POST' action=`/contacts/${contact.id}/edit`)
+      fieldset
+        legend Contact Information
+        .form-group
+          label(for='firstName') First Name
+          input#firstName.form-control(type='text', name='firstName', required='true', value=(contact ? contact.firstName : ''))
+        .form-group
+          label(for='lastName') Last Name
+          input#lastName.form-control(type='text', name='lastName', required='true', value=(contact ? contact.lastName : ''))
+        .form-group
+          label(for='email') Email
+          input#email.form-control(type='email', name='email', value=(contact ? contact.email : ''))
+        .form-group
+          label(for='notes') Notes
+          input#notes.form-control(type='text',name='notes', value=(contact ? contact.notes : ''))
+        .form-actions
+          button.button(type='submit') Save Changes
+          a.button-like(href='/contacts') Cancel
